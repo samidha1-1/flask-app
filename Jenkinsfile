@@ -10,14 +10,6 @@ pipeline {
             }
         }
 
-        stage("Install dependencies") {
-            steps {
-                echo "Installing dependencies"
-                sh 'python3 -m pip install -r requirements.txt'
-            
-            }
-        }
-
         stage('Build docker image'){
             steps {
                 sh 'docker build -t flask-app:latest .'
